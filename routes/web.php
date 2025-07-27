@@ -1,10 +1,11 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('pages.home');
-});
+// Route::get('/', function () {
+//     return view('pages.home');
+// });
 
 Auth::routes();
 
@@ -12,13 +13,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Guest-only routes (redirects authenticated users)
 Route::middleware(['guest.only'])->group(function () {
-    Route::get('/login', function () {
-        return view('auth.login');
-    })->name('login');
-    
-    Route::get('/register', function () {
-        return view('auth.register');
-    })->name('register');
+    Route::get('/',[PageController::class, 'home'])->name('home');
 });
 
 // Customer-only routes (requires authentication)
