@@ -14,6 +14,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Guest-only routes (redirects authenticated users)
 Route::middleware(['guest.only'])->group(function () {
     Route::get('/',[PageController::class, 'home'])->name('home');
+    Route::get('/shop',[PageController::class, 'shop'])->name('shop');
+    Route::get('/product-detail',[PageController::class, 'product_detail'])->name('product_detail');
+    Route::get('/about-us',[PageController::class, 'about_us'])->name('about_us');
+
+
+    
 });
 
 // Customer-only routes (requires authentication)
