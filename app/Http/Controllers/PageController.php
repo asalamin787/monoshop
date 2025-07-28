@@ -27,4 +27,25 @@ class PageController extends Controller
         return view('pages.about_us');
        
     }
+
+     public function notFound()
+    {
+        return view('pages.404');
+       
+    }
+      public function faq()
+    {
+        return view('pages.faq');
+       
+    }
+     public function track_order()
+    {
+        return view('pages.track_order');
+       
+    }
+      public function account_page()
+    {
+        return view('pages.account_page');
+       
+    }
 }

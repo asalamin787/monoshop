@@ -17,6 +17,14 @@ Route::middleware(['guest.only'])->group(function () {
     Route::get('/shop',[PageController::class, 'shop'])->name('shop');
     Route::get('/product-detail',[PageController::class, 'product_detail'])->name('product_detail');
     Route::get('/about-us',[PageController::class, 'about_us'])->name('about_us');
+    Route::get('/404',[PageController::class, 'notFound'])->name('404');
+    Route::get('/faq',[PageController::class, 'faq'])->name('faq');
+    Route::get('/track-order',[PageController::class, 'track_order'])->name('track_order');
+    Route::get('/account-page',[PageController::class, 'account_page'])->name('account_page');
+
+
+
+
 
 
     
